@@ -13,6 +13,7 @@ This project is designed for teams managing multiple blog posts efficiently, wit
 - A powerful **admin dashboard** with full **CRUD functionality**
 - A tool for generating blog posts using an **AI writing assistant**
 - Support for **images**, **keywords**, **SEO metadata**, **authors**, and more
+- **Like and comment system** on blog posts
 - **Responsive design** optimized for mobile, tablet, and desktop screens
 
 ---
@@ -31,53 +32,45 @@ This project is designed for teams managing multiple blog posts efficiently, wit
 
 ## ⚙️ Setup Instructions
 
-### 1. Clone the repository
+### 🖥️ Terminal Setup (Initial Commands)
+
+Run the following commands in your terminal to bootstrap your environment:
 
 ```bash
-git clone https://github.com/yourusername/blog-management-system.git
-cd blog-management-system
-```
+# 1. Create project folder and move into it
+mkdir blog-management-system && cd blog-management-system
 
-### 2. Create and activate a virtual environment
-
-```bash
+# 2. Create a virtual environment
 python -m venv venv
 source venv/bin/activate
-```
 
-### 3. Install dependencies
+# 3. Install Django
+pip install django
 
-```bash
-pip install -r requirements.txt
-```
+# 4. Create Django project
+django-admin startproject config .
 
-### 4. Configure Tailwind CSS
+# 5. Create required apps
+python manage.py startapp blog
+python manage.py startapp accounts
+python manage.py startapp comments
 
-- Ensure `tailwind.config.js` and `postcss.config.js` are present.
-- Run Tailwind in watch mode (during development):
+# 6. Create folders for templates and static
+mkdir templates static media
 
-```bash
-npm install
-npm run dev
-```
-
-### 5. Apply database migrations
-
-```bash
+# 7. Make initial migrations
 python manage.py migrate
-```
 
-### 6. Create a superuser
-
-```bash
+# 8. Create a superuser
 python manage.py createsuperuser
-```
 
-### 7. Run the development server
-
-```bash
+# 9. Run the development server
 python manage.py runserver
 ```
+
+### 🔧 Tailwind Configuration
+
+You will configure Tailwind CSS separately. Make sure to install and compile Tailwind in watch mode for development.
 
 ---
 
@@ -88,6 +81,11 @@ python manage.py runserver
 - Add blog image, title, content, keywords, SEO metadata, and author
 - Fully styled blog listing and detail view
 - Search and filter by keywords or title
+
+### ✅ User Interaction
+- Users can **like** blog posts
+- Users can **comment** on blog posts
+- Comment moderation by admin (optional)
 
 ### ✅ Admin Panel
 - Full blog CRUD from Django Admin
@@ -132,7 +130,9 @@ Make sure your code is pushed to a public or private GitHub repository.
 5. ✅ Visitors can read blogs and see authors and images
 6. ✅ SEO fields (meta title, description) render properly in page headers
 7. ✅ App deploys successfully on Render with media and static files served
-8. ✅ 404 page shows for missing blog slugs
+8. ✅ Users can like a blog post and see the like count
+9. ✅ Users can leave comments, and admin can moderate them
+10. ✅ 404 page shows for missing blog slugs
 
 ---
 
