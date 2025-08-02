@@ -70,7 +70,8 @@ python manage.py runserver
 
 ### 🔧 Tailwind Configuration
 
-You will configure Tailwind CSS separately. Make sure to install and compile Tailwind in watch mode for development.
+Configure Tailwind CSS separately. Make sure to install and compile Tailwind in watch mode for development. Open a new terminal and run npm run dev or the equivalent Tailwind watch command, then leave it running while you work on your project.
+
 
 ---
 
