@@ -1,0 +1,26 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+env/
+venv/
+*.env
+
+# Django
+*.log
+staticfiles/
+media/
+
+# Node/Tailwind (optional)
+node_modules/
+dist/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Render or deployment
+.env
